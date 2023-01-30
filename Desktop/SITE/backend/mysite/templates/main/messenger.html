@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Messenger</h1>
+  
+    <div class="d-flex">
+      <div class="w-50 mr-3">
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="sender">Sender:</label>
+            <input type="text" class="form-control" id="sender" name="sender" value="{{ request.user.username }}" readonly>
+          </div>
+          <div class="form-group">
+            <label for="recipient">Recipient:</label>
+            <input type="text" class="form-control" id="recipient" name="recipient">
+          </div>
+          <div class="form-group">
+            <label for="text">Message:</label>
+            <textarea class="form-control" id="text" name="text" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+  
+      <div class="w-50">
+        <h2 class="mt-5">Sent Messages</h2>
+        <div class="d-flex flex-column align-items-start">
+          {% for message in sent_messages %}
+            <div class="card w-100 mb-3">
+              <div class="card-body">
+                <p class="card-text">To: {{ message.recipient }}</p>
+                <p class="card-text">{{ message.text }}</p>
+                <p class="card-text">{{ message.timestamp }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  
+    <h2 class="mt-5">Received Messages</h2>
+    <div class="d-flex flex-column align-items-start">
+      {% for message in received_messages %}
+        <div class="card w-50 mb-3">
+          <div class="card-body">
+            <p class="card-text">From: {{ message.sender }}</p>
+            <p class="card-text">{{ message.text }}</p>
+            <p class="card-text">{{ message.timestamp }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

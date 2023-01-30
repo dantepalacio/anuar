@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}Main Page{% endblock title %}
+
+{% block content %}
+<div class="img-bg">
+    <div class="lg-3">
+        <p class="head-text">anuar</p>
+    </div>
+    <div class="lg-6">
+        <div class="login-text">Вход</div>
+        <a href="/login/"><img class="earth-pic" src="/static/photo/earth.png" alt="Alt"></a>
+    </div>
+    <div class="lg-3">
+        {% url 'logout_page' as url_logout_page %}
+        <a class="Logout-btn" href="{{url_logout_page}}">Выйти</a>
+
+    </div>
+</div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{%extends 'layout.html'%}
+{% block title %}
+Регистрация
+{% endblock title %}
+
+{% block content %}
+<h1 class="reg-text">Регистрация</h1>
+<div class='col-4'>
+  <form id="add_form" method="post">
+    {% csrf_token %}
+    {{form}}
+    <button form="add_form" type="submit" class="btn btn-primary mt-4">Регистрация</button>
+  </form>
+</div>
+{% endblock content %}

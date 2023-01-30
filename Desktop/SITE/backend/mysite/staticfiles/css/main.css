@@ -1,0 +1,41 @@
+.font-size-16 {
+    font-size:12px;
+    text-decoration: none;
+}
+
+.bg-color {
+    background-color: #74B4E0;
+}
+
+#main_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #74B4E0;
+    padding: 30px;
+    margin-top: 250px;
+}
+
+.picture {
+    margin-bottom: 10px;
+}
+
+.button1 {
+    background-color: rgb(34, 55, 100);
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    height: 50px;
+    color: white;
+
+}
+
+.button2 {
+    background-color: rgb(34, 55, 100);
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    height: 50px;
+    color: white;
+}
