@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1 class="checkk">welcome</h1>
+{{request.user}}
+{% url 'logout' as url_logout_page %}
+<a class="Logout-btn" href="{{url_logout_page}}">Выйти</a>
+{% url 'login' as url_login_page %}
+<a class="btn btn-primary" href="{{url_login_page}}">Вход</a>
+{% url 'register' as url_register_page %}
+<a class="btn btn-primary" href="{{url_register_page}}">Регистрация</a>
+{% endblock content %}
